@@ -1,44 +1,47 @@
 <template>
-  <div class="Register">
-
-<div class="container">
- <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input 
-          type="email" 
-          id="inputEmail" 
-          class="form-control" 
-          placeholder="Email address" 
-          v-model="email"
-          required autofocus>
-        
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input 
-          type="password" 
-          id="inputPassword" 
-          class="form-control" 
-          placeholder="Password" 
-          v-model="password"
-          required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-
-        <div class="error" v-html="error"></div>
-
-        <button 
-          class="btn btn-lg btn-primary btn-block" 
-          type="submit"
-          @click ="register"
-          >Sign in</button>
-
-      </form>
-    </div> <!-- /container -->
-    <h1></h1>
-  </div>
+<v-app>
+  <v-toolbar>
+     <v-toolbar-title>Register</v-toolbar-title>
+     <v-spacer></v-spacer>
+      <v-toolbar-items>
+      <v-btn flat>Login</v-btn>
+      <v-btn flat>Signup</v-btn>
+      <v-btn flat>Home</v-btn>
+    </v-toolbar-items>
+  </v-toolbar>
+  <main>
+  <v-layout column>
+    <v-flex xs6 offset-xs3>
+      <panel title="Register">
+        <form 
+          name="tab-tracker-form"
+          autocomplete="off">
+          <v-text-field
+            label="Email"
+            v-model="email"
+          ></v-text-field>
+          <br>
+          <v-text-field
+            label="Password"
+            type="password"
+            v-model="password"
+            autocomplete="new-password"
+          ></v-text-field>
+        </form>
+        <br>
+        <div class="danger-alert" v-html="error" />
+        <br>
+        <v-btn
+          dark
+          class="cyan"
+          @click="register">
+          Register
+        </v-btn>
+      </panel>
+    </v-flex>
+  </v-layout>
+  </main>
+</v-app>
 </template>
 
 <script>
@@ -54,6 +57,7 @@ export default {
   },
   methods:{
     async register(){
+      //if authentication
       try{
         await AuthenticationService.register({
         email: this.email,
