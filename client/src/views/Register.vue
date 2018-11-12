@@ -10,7 +10,7 @@
               </v-toolbar>
               <div class="pl-4 pr-4 pt-2 pb-2">
                 <v-text-field name="email" label="email" v-model="email"></v-text-field>
-                <v-text-field name="password" label="password" v-model="password"></v-text-field>
+                <v-text-field name="password" type = "password" autocomplete="new-password" label="password" v-model="password"></v-text-field>
                 <div class="danger-alert" v-html="error" />
                 <v-btn @click="register" color="info">Register</v-btn>
               </div>
