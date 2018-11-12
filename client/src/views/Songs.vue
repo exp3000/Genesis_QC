@@ -23,24 +23,20 @@
 
 <script>
 import Panel from "@/components/Panel";
+import SongsService from "@/services/SongsService"
 
 export default {
   data () {
     return{
       songs: [
-        {
-          title: "Song 1",
-          artist: "Band 1",
-          album: "Album 1"
-        },
-        {
-          title: "Song 2",
-          artist: "Band 2",
-          album: "Album 2"
-        }
+       
       ]
     }
     
+  },
+  async mounted (){
+    //when Songs view component is mounted, request backend for list of songs (saved as index)
+    this.songs = await SongsService.index()
   },
   components: {
     Panel
