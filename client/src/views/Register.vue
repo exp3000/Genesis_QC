@@ -4,18 +4,19 @@
       <v-container fluid fill-height>
         <v-layout align-center justify-center>
           <v-flex xs12 sm8 md4>
-            <div class="white elevation-2">
-              <v-toolbar flat dense class="cyan">
-                <v-toolbar-title class="mr-4">Register</v-toolbar-title>
-              </v-toolbar>
-              <div class="pl-4 pr-4 pt-2 pb-2">
-                <v-text-field name="email" label="email" v-model="email"></v-text-field>
-                <v-text-field name="password" type = "password" autocomplete="new-password" label="password" v-model="password"></v-text-field>
-                <div class="danger-alert" v-html="error" />
-                <v-btn @click="register" color="info">Register</v-btn>
-              </div>
-            </div>
-            </v-flex>
+            <panel title="Register">
+              <v-text-field name="email" label="email" v-model="email"></v-text-field>
+              <v-text-field
+                name="password"
+                type="password"
+                autocomplete="new-password"
+                label="password"
+                v-model="password"
+              ></v-text-field>
+              <div class="danger-alert" v-html="error"/>
+              <v-btn @click="register" color="info">Register</v-btn>
+            </panel>
+          </v-flex>
         </v-layout>
       </v-container>
     </v-content>
@@ -24,6 +25,7 @@
 
 <script>
 import AuthenticationService from "@/services/AuthenticationService.js";
+import Panel from "@/components/Panel";
 
 export default {
   data() {
@@ -40,16 +42,18 @@ export default {
         const response = await AuthenticationService.register({
           email: this.email,
           password: this.password
-        })
+        });
 
-        this.$store.dispatch('setToken', response.data.token)
-        this.$store.dispatch('setUser', response.data.user)
-
+        this.$store.dispatch("setToken", response.data.token);
+        this.$store.dispatch("setUser", response.data.user);
       } catch (error) {
         //error.response.data will be returned from axios
         this.error = error.response.data.error;
       }
     }
+  },
+  components: {
+    Panel
   }
 };
 </script>
