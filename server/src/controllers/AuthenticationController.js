@@ -30,7 +30,7 @@ module.exports = {
             })
         } catch (err) {
             //error such as user already exists
-            res.status(400).send({
+            res.status(500).send({
                 error: 'This account is already in use: ' + req.body.email
             })
         }

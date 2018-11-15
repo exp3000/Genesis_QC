@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
         genre: DataTypes. STRING,
         album: DataTypes. STRING,
         youtubeId: DataTypes. TEXT,
+        albumImageUrl: DataTypes. TEXT,
         tab: DataTypes. TEXT,
         })
 
