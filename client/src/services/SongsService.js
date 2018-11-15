@@ -1,11 +1,14 @@
 import Api from '@/services/api'
 
 export default {
-    register (credentials){
-        return Api().post('register', credentials)
+    //make index (name whatever you want) call to /songs endpoint
+    index() {
+        return Api().get('songs')
     },
-    login (credentials){
-        return Api().post('login', credentials)
+
+    //add song data
+    post(song) {
+        return Api().post('songs', song)
     }
 }
 

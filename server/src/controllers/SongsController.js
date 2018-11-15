@@ -1,36 +1,42 @@
 const {
-    User
+    Song
 } = require('../models')
 
 
 module.exports = {
+
         //get song
         async index (req, res) {
             try {
                 //return all songs
-                    const song = Song.create(req.body)
-                    res.send(song)
+                    const songs = await Song.findAll({
+                        limit: 10
+                    })
+                    //sends songs back
+                    res.send(songs)
                 
             } catch (err) {
                 //error such as user already exists
                 res.status(500).send({
-                    error: 'This account is already in use: ' + req.body.email
+                    error: 'Error occured while trying to find songs'
                 })
             }
-        }
+        },
 
 
     //create song
     async post(req, res) {
+        console.log('here 3')
         try {
+  
             //create song
-            const song = Song.create(req.body)
+            const song = await Song.create(req.body)
             res.send(song)
             
         } catch (err) {
             //error such as user already exists
             res.status(500).send({
-                error: 'This account is already in use: ' + req.body.email
+                error: 'Error occured trying to create a song'
             })
         }
     }

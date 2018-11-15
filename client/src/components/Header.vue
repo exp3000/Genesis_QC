@@ -4,10 +4,10 @@
             <v-btn flat replace large to="home">Register</v-btn>
         </v-toolbar-title>
         <v-spacer></v-spacer>
-        <v-toolbar-items
-            >
+        <v-toolbar-items>
+            <!-- <p>{{this.$store.state.user.email}}</p> -->
             <v-btn flat to="songs">Browse</v-btn>
-
+            <v-btn flat to="create">Add</v-btn>
             <v-btn v-if="!$store.state.isUserLoggedIn" flat to="login">Log In</v-btn>
             <v-btn v-if="!$store.state.isUserLoggedIn" flat to="register">Sign Up</v-btn>
             <v-btn v-if="$store.state.isUserLoggedIn" @click="logout" flat to="login">Log Out</v-btn>
@@ -17,13 +17,12 @@
 
 <script lang="ts">
 export default {
-    methods: {
-        logout () {
-            this.$store.dispatch('setToken', null)
-            this.$store.dispatch('user', null)
-   
-        }
+  methods: {
+    logout() {
+      this.$store.dispatch("setToken", null);
+      this.$store.dispatch("user", null);
     }
+  }
 };
 </script>
 

@@ -20,4 +20,8 @@ module.exports = (app) => {
     SongsController.index
     )
 
+    //end point to create songs 
+    app.post('/songs', 
+    SongsController.post
+    )
 }
