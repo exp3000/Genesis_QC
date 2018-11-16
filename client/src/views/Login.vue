@@ -1,13 +1,5 @@
 <template>
-  <v-app>
-    <v-content>
-      <v-container fluid
-                   fill-height>
-        <v-layout align-center
-                  justify-center>
-          <v-flex xs12
-                  sm8
-                  md4>
+
             <panel title="Login">
               <v-text-field name="email"
                             label="email"
@@ -21,11 +13,8 @@
               <v-btn @click="login"
                      color="info">Login</v-btn>
             </panel>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </v-content>
-  </v-app>
+
+
 </template>
 
 <script>

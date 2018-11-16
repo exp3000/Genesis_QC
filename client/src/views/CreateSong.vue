@@ -1,8 +1,8 @@
 <template>
-  <v-app>
-    <v-content>
-      <v-container fluid>
-        <v-layout style="padding-top : 200px">
+
+
+
+        <v-layout >
 
           <v-flex xs4>
             <panel title="Song Metadata">
@@ -54,10 +54,10 @@
           </v-flex>
 
         </v-layout>
-      </v-container>
-    </v-content>
-  </v-app>
-</template>F
+ 
+
+
+</template>
 
 <script>
 import Panel from "@/components/Panel";

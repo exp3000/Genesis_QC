@@ -1,9 +1,5 @@
 <template>
-  <v-app>
-    <v-content>
-      <v-container fluid fill-height>
-        <v-layout align-center justify-center>
-          <v-flex xs12 sm8 md4>
+  
             <panel title="Register">
               <v-text-field name="email" label="email" v-model="email"></v-text-field>
               <v-text-field
@@ -16,11 +12,7 @@
               <div class="danger-alert" v-html="error"/>
               <v-btn @click="register" color="info">Register</v-btn>
             </panel>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </v-content>
-  </v-app>
+
 </template>
 
 <script>
