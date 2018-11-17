@@ -1,23 +1,24 @@
 <template>
-  
-            <panel title="Register">
-              <v-text-field name="email" label="email" v-model="email"></v-text-field>
-              <v-text-field
-                name="password"
-                type="password"
-                autocomplete="new-password"
-                label="password"
-                v-model="password"
-              ></v-text-field>
-              <div class="danger-alert" v-html="error"/>
-              <v-btn @click="register" color="info">Register</v-btn>
-            </panel>
+
+  <panel title="Register">
+    <v-text-field name="email"
+                  label="email"
+                  v-model="email"></v-text-field>
+    <v-text-field name="password"
+                  type="password"
+                  autocomplete="new-password"
+                  label="password"
+                  v-model="password"></v-text-field>
+    <div class="danger-alert"
+         v-html="error" />
+    <v-btn @click="register"
+           color="info">Register</v-btn>
+  </panel>
 
 </template>
 
 <script>
 import AuthenticationService from "@/services/AuthenticationService.js";
-import Panel from "@/components/Panel";
 
 export default {
   data() {
@@ -44,9 +45,7 @@ export default {
       }
     }
   },
-  components: {
-    Panel
-  }
+  components: {}
 };
 </script>
 

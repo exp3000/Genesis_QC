@@ -2,8 +2,12 @@ import Api from '@/services/api'
 
 export default {
     //make index (name whatever you want) call to /songs endpoint
-    index() {
-        return Api().get('songs')
+    index(search) {
+        return Api().get('songs', {
+            params: {
+                search: search
+            }
+        })
     },
 
     //add song data

@@ -1,11 +1,16 @@
 <template>
-<songs-panel></songs-panel>
+<div>
+<songs-search-panel></songs-search-panel>
+  <songs-panel></songs-panel>
+</div>
+
 </template>
 
 <script>
-import Panel from "@/components/Panel";
+
 import SongsService from "@/services/SongsService";
 import SongsPanel from "@/components/SongsPanel";
+import SongsSearchPanel from "@/components/SongsSearchPanel";
 
 export default {
   data() {
@@ -19,8 +24,9 @@ export default {
     this.songs = (await SongsService.index()).data;
   },
   components: {
-    Panel,
-    SongsPanel
+
+    SongsPanel,
+    SongsSearchPanel
   }
 };
 </script>

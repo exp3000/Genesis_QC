@@ -8,6 +8,10 @@ import {sync} from 'vuex-router-sync'
 import 'vuetify/dist/vuetify.min.css' 
 import store from '@/store/store'
 
+//use the created panel as a global since it is used everywhere
+import Panel from '@/components/Panel.vue';
+
+Vue.component('panel', Panel)
 
 Vue.use(Vuetify)
 

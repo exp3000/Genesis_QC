@@ -1,5 +1,5 @@
 <template>
-    <div class="white elevation-2">
+    <div class="white elevation-2 panel">
         <v-toolbar flat
                    dense
                    class="cyan">
@@ -21,4 +21,9 @@ export default {
 </script>
 
 <style>
+.panel{
+    margin: 10px;
+}
+
+
 </style>

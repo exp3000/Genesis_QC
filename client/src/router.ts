@@ -14,7 +14,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'login',
+      name: 'home',
       component: Login
     },
     {
@@ -34,7 +34,7 @@ export default new Router({
       component: Songs
     },
     {
-      path: '/create',
+      path: '/songs/add',
       name: 'songs-create',
       component: CreateSong
     },

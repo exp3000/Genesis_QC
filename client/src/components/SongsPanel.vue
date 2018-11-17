@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import Panel from "@/components/Panel";
+
 import SongsService from "@/services/SongsService";
 
 export default {
@@ -58,8 +58,15 @@ export default {
 
     this.songs = (await SongsService.index()).data;
   },
-  components: {
-    Panel
+  watch: {
+    '$route.query.search': {
+      immediate: true,
+      async handler(value){
+
+        this.songs = (await SongsService.index(value)).data
+      }
+    }
+
   }
 };
 </script>
