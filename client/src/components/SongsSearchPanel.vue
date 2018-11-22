@@ -17,7 +17,7 @@ export default {
     };
   },
   watch: {
-      //add 70ms delay to search to ensure not too many requests
+      //add 700ms delay to search to ensure not too many requests
       //are sent to server at the same time, slowing down the page
       search: _.debounce(async function (value){
           // search(value) {

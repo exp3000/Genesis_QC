@@ -10,11 +10,10 @@
                    fill-height>
         <v-layout align-center
                   justify-center>
-          <v-flex xs12
-                  sm8
-                  md4>
+          <v-flex >
            
            <router-view/>
+
           </v-flex>
         </v-layout>
       </v-container>
@@ -52,5 +51,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  padding-top: 15px;
 }
 </style>

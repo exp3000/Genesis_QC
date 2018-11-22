@@ -6,22 +6,28 @@ const SongsController = require('./controllers/SongsController')
 //in express, once thge register end point is hit,
 //the following middleware will be invoked 
 module.exports = (app) => {
-    app.post('/register', 
-    AuthenticationControllerPolity.register,
-    AuthenticationController.register
+    app.post('/register',
+        AuthenticationControllerPolity.register,
+        AuthenticationController.register
     )
 
-    app.post('/login', 
-    AuthenticationController.login
+    app.post('/login',
+        AuthenticationController.login
     )
 
     //listed for get request on the songs endpoint    
-    app.get('/songs', 
-    SongsController.index
+    app.get('/songs',
+        SongsController.index
     )
 
+    //listed for get request on the songs endpoint    
+    app.get('/songs/:songId',
+        SongsController.show
+    )
+
+
     //end point to create songs 
-    app.post('/songs', 
-    SongsController.post
+    app.post('/songs',
+        SongsController.post
     )
 }

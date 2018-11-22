@@ -15,24 +15,34 @@ module.exports = {
             console.log('search for: ' + search)
             //respond to search
             if (search) {
-                
+
                 console.log('searching...')
                 songs = await Song.findAll({
-                    where:{
-                        [Op.or]: [
-                            {title: {[Op.like]: '%' + search + '%'}},
-                            {album: {[Op.like]: '%' + search + '%'}}
+                    where: {
+                        [Op.or]: [{
+                                title: {
+                                    [Op.like]: '%' + search + '%'
+                                }
+                            },
+                            {
+                                album: {
+                                    [Op.like]: '%' + search + '%'
+                                }
+                            }
                             // etc.
-                           ]
-                         }
-                      })
-                      
-                } else {
-                 console.log('not searching')
+                        ]
+                    }
+                })
+
+            } else {
+                console.log('not searching')
                 //return all songs
+
+
+
                 songs = await Song.findAll({
                     limit: 2
-               })
+                })
             }
 
             res.send(songs)
@@ -46,11 +56,23 @@ module.exports = {
             })
         }
     },
+    //get one songs
+    async show(req, res) {
+        try {
 
+            const song = await Song.findById(req.params.songId)
+            res.send(song)
+        } catch (err) {
+            //error such as user already exists
+            res.status(500).send({
+                error: 'Error occured while trying to find songs'
+            })
+        }
+    },
 
     //create song
     async post(req, res) {
-        console.log('here 3')
+
         try {
 
             //create song
