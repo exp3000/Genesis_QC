@@ -32,14 +32,13 @@
 <script lang="ts">
 export default {
   methods: {
-    logout() {
-      this.$store.dispatch("setToken", null);
-      this.$store.dispatch("user", null);
+    logout () {
+      this.$store.dispatch('setToken', null)
+      this.$store.dispatch('user', null)
     }
   }
-};
+}
 </script>
 
 <style>
 </style>
-

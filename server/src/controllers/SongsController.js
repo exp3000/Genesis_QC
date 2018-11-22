@@ -85,5 +85,27 @@ module.exports = {
                 error: 'Error occured trying to create a song'
             })
         }
+    },
+
+    //edit song
+    async put(req, res) {
+
+        try {
+
+            //create song
+           await Song.update(req.body, {
+                where: {
+                    id: req.params.songId
+                }
+            })
+            res.send(req.body)
+
+        } catch (err) {
+            //error such as user already exists
+            res.status(500).send({
+                error: 'Error occured trying to update a song'
+            })
+        }
     }
+
 }

@@ -15,13 +15,12 @@ export default {
         return Api().post('songs', song)
     },
 
-    show(songId){
+    show(songId) {
         return Api().get(`songs/${songId}`)
-    }
-}
+    },
 
-// call the above method from another file
-// AuthenticationService.register({
-//     email: 'email@gmail.com',
-//     password: '123456'
-// })
+    put (song) {
+        return Api().put(`songs/${song.id}`, song)
+    }
+
+}

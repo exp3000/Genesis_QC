@@ -30,4 +30,10 @@ module.exports = (app) => {
     app.post('/songs',
         SongsController.post
     )
+
+    //end point to edit songs 
+    app.put('/songs/:songId',
+        SongsController.put
+    )
+
 }
