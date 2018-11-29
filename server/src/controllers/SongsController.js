@@ -28,7 +28,12 @@ module.exports = {
                                 album: {
                                     [Op.like]: '%' + search + '%'
                                 }
+                            },    {
+                                artist: {
+                                    [Op.like]: '%' + search + '%'
+                                }
                             }
+
                             // etc.
                         ]
                     }
@@ -41,7 +46,7 @@ module.exports = {
 
 
                 songs = await Song.findAll({
-                    limit: 2
+                    limit: 10
                 })
             }
 

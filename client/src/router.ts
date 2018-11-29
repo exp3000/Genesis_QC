@@ -16,7 +16,7 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Login
+      component: Songs
     },
     {
       path: '/login',
@@ -47,6 +47,10 @@ export default new Router({
       path: '/songs/:songId/edit',
       name: 'edit',
       component: EditSong
-    }
+    },
+    //redirect routes that dont exist here:
+    {path: '*',
+  redirect: 'songs'}
+
   ]
 })

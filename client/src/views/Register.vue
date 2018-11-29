@@ -39,6 +39,11 @@ export default {
 
         this.$store.dispatch("setToken", response.data.token);
         this.$store.dispatch("setUser", response.data.user);
+
+        //reroute used to songs page after login
+        this.$router.push({
+          name: "songs"
+        });
       } catch (error) {
         //error.response.data will be returned from axios
         this.error = error.response.data.error;

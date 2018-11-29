@@ -1,11 +1,16 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import createPersistedState from 'vuex-persistedstate'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  
+
     //cant modify state unless through action or mutation
     strict: true, 
+
+    
     state: {
         //global states for the application
         //track tokens (to validate password), user name, and login status
@@ -46,5 +51,6 @@ export default new Vuex.Store({
             //calls mutation set Token
             commit('setUser', user)
     }
-}
+},
+plugins: [createPersistedState()]
 })

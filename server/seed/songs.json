@@ -1,0 +1,22 @@
+[
+    {
+      "id": 1,
+      "title": "As the Palaces Burn",
+      "artist": "Lamb of God",
+      "genre": "Metal",
+      "album": "As the Palaces Burn",
+      "youtubeId": "https://www.youtube.com/user/OfficialTrapCity",
+      "albumImageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/4/46/AsThePalacesBurn.jpg/220px-AsThePalacesBurn.jpg",
+      "tab": "12312354122341234"
+    },
+    {
+      "id": 2,
+      "title": "Toxicity ",
+      "artist": "System of a Down",
+      "genre": "Rock",
+      "album": "Toxicity",
+      "youtubeId": "https://www.youtube.com/watch?v=3zw5LgKDMhg&t=115s",
+      "albumImageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/6/64/SystemofaDownToxicityalbumcover.jpg/220px-SystemofaDownToxicityalbumcover.jpg",
+      "tab": "421342345632"
+    }
+  ]

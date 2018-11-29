@@ -26,7 +26,7 @@
           </div>
 
           <v-btn class="cyan"
-                 :to="{name: 'song', params: {songId: song.id}}">
+                 :to="{name: 'song', params: {songId: song.id, song: song}}">
             View
           </v-btn>
         </v-flex>
@@ -44,20 +44,20 @@
 </template>
 
 <script>
-import SongsService from '@/services/SongsService'
+import SongsService from "@/services/SongsService";
 
 export default {
-  data () {
+  data() {
     return {
       songs: null
-    }
+    };
   },
   async mounted() {
     //when Songs view component is mounted, request backend for list of songs (saved as index)
-
     this.songs = (await SongsService.index()).data;
   },
   watch: {
+    // check for search query changes and get resuts from backend
     "$route.query.search": {
       immediate: true,
       async handler(value) {
